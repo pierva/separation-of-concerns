@@ -56,6 +56,24 @@ var octopus = {
   incrementCounter: function() {
     model.currentBike.clicks++;
     bikeView.render();
+  },
+
+  updateBike: function(index, newObj){
+    model.bikes[index] = newObj;
+  },
+
+  updateBikeValues: function() {
+    var newValues = adminView.getFormValues();
+    var id = model.currentBike.id;
+    newValues.id = id;
+    $.each(model.bikes, function(index, bike){
+      if (bike.id === id){
+         octopus.updateBike(index, newValues)
+      }
+    });
+    this.setCurrentBike(newValues);
+    bikeView.render();
+    bikeListView.render();
   }
 };
 
@@ -135,7 +153,32 @@ var adminView = {
     $('#adminButton').on('click', function(event) {
       event.preventDefault();
       $('.admin-form-container').toggle(200);
+      adminView.render();
     });
+  },
+
+  render: function () {
+    var currentBike = octopus.getCurrentBike();
+    this.nameElem.val(currentBike.title);
+    this.urlElem.val(currentBike.src);
+    this.clicksElem.val(currentBike.clicks);
+    $("button[name='cancel']").on('click', function(event){
+      event.preventDefault();
+      $('.admin-form-container').hide(200);
+    });
+    $("button[name='save']").on('click', function(event){
+      event.preventDefault();
+      octopus.updateBikeValues();
+      $('.admin-form-container').hide(200);
+    });
+  },
+
+  getFormValues: function () {
+    var newValues = {}
+    newValues.src = this.urlElem.val();
+    newValues.title = this.nameElem.val();
+    newValues.clicks = this.clicksElem.val();
+    return newValues;
   }
 
 };
