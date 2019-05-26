@@ -36,6 +36,7 @@ var octopus = {
     // Tell the view to initialize
     bikeListView.init();
     bikeView.init();
+    adminView.init();
   },
 
   getCurrentBike: function() {
@@ -122,6 +123,18 @@ var bikeListView = {
       // add the element to the list
       $(".list").append(elem);
 
+    });
+  }
+}
+
+var adminView = {
+  init: function () {
+    this.nameElem = $('input[name="name"]');
+    this.urlElem = $('input[name="url"]');
+    this.clicksElem = $('input[name="clicks"]');
+    $('#adminButton').on('click', function(event) {
+      event.preventDefault();
+      $('.admin-form-container').toggle(200);
     });
   }
 
