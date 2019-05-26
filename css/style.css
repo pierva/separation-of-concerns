@@ -74,3 +74,26 @@
 .w-100 {
   width: 100%;
 }
+
+.form-group {
+  margin: 0.5rem auto;
+}
+
+.admin-container {
+  margin-top: 1rem;
+}
+
+.admin-form-container {
+  display: none;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgb(200, 200, 200);
+}
