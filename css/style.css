@@ -1,0 +1,76 @@
+.container {
+  margin: 2rem;
+}
+
+.header {
+  text-align: center;
+  font-weight: 300;
+}
+
+.header-2 {
+  font-size: 1.5rem;
+  padding: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: rgb(255, 255, 255);
+  background-color: rgb(9, 98, 251);
+}
+
+.btn-primary:hover {
+  background-color: rgba(9, 98, 251, 0.86);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+}
+
+.img-container {
+  width: 70%;
+  padding: 1rem;
+}
+
+.img-container img {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px -1px;
+  width: 100%;
+
+}
+
+.list-container {
+  width: 30%;
+  padding: 1rem;
+}
+
+.list {
+  margin-top: 2rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
